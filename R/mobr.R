@@ -457,7 +457,7 @@ rarefaction = function(x, method, effort=NULL, coords=NULL, latlong=NULL,
         if (dens_ratio == 1) {
             ldiv = lchoose(n, effort)
         } else {
-            effort = effort[effort / dens_ratio <= n]
+            effort = effort[effort / dens_ratio]
             ldiv = lgamma(n - effort / dens_ratio + 1) - lgamma(n + 1)
         }
         p = matrix(0, sum(effort <= n), S)
